@@ -15,12 +15,16 @@
 }
 
 .userName,
-.userId {
+.userId,
+.bold {
   font-weight: 900;
 }
 
 .gray {
   color: #797878;
+}
+.lightgray {
+  color: #bebebe;
 }
 
 body {
@@ -85,6 +89,7 @@ article {
 }
 
 .articleHeader {
+  height: 60px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -95,7 +100,10 @@ article {
   display: flex;
   flex-direction: row;
 }
-
+.articleHeader img {
+  width: 60px;
+  height: 60px;
+}
 .userInfo .userProfile {
   padding: 10px;
   margin-left: 5px;
@@ -107,26 +115,124 @@ article {
   flex-direction: column;
   justify-content: center;
 }
+.threeBtn {
+  width: 10px;
+  height: 10px;
+  object-fit: cover;
+}
 
 .articleImg {
   width: 615px;
 }
 
+.articleFooter {
+  width: 100%;
+  padding: 4px 8px 0px 8px;
+  /* padding: 10px, 30px; */
+}
+.iconbar {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.iconbar .btn {
+  margin: auto 8px;
+}
 .iconWrapper {
   display: flex;
   flex-direction: row;
 }
 
-.main-right {
+.commentArea {
+  padding: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.likeStatus {
+  margin-bottom: 8px;
+}
+.comment {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.time {
+  font-size: 0.75em;
+}
+.commentForm {
+  width: 100%;
+  border-top: 1px solid lightgray;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.commentInput {
+  border: none;
+}
+.addBtn {
+  border: none;
+  background: none;
+  color: #bee1fd;
 }
 
+.main-right {
+  font-size: 14px;
+  width: 293px;
+  margin: 20px 0 0 30px;
+}
 .userProfile {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
 }
-
-.articleImg {
-  width: 600px;
-  height: 600px;
+.main-right .userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.main-right .userText {
+  padding: 0 auto;
+}
+.recommendText {
+  display: flex;
+  justify-content: space-between;
+}
+.recommended .userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+}
+.recommended .userProfile {
+  width: 60px;
+  height: 60px;
+}
+.recommended .userText {
+  width: 170px;
+}
+.follow {
+  border: none;
+  background: none;
+  color: #469edb;
+}
+.menu {
+  margin-top: 25px;
+  width: 100%;
+  border-image-repeat: stretch;
+  list-style: none;
+  display: block;
+  padding: 0;
+  font-size: 11px;
+}
+.menu li {
+  display: inline-block;
+  line-height: 13px;
+  vertical-align: baseline;
+}
+.copyright {
+  font-size: 11px;
 }
