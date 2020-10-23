@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  font-size: 0.98em;
+}
+.btn {
+  height: 30px;
+  width: 25px;
+  height: 25px;
+  margin: 15px 10px 15px 10px;
+}
+
+.smallHeart {
+  height: 12px;
+  width: 12px;
+}
+
+.userName,
+.userId {
+  font-weight: 900;
+}
+
+.gray {
+  color: #797878;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+nav {
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid lightgray;
+}
+
+.navWrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* vertical-align: middle; */
+  /* align-content: center; */
+  width: 940px;
+  height: 50px;
+}
+
+.textLogo {
+  width: 103px;
+  height: 29px;
+  object-fit: cover;
+  /* margin-top: 15px; */
+}
+
+.search {
+  width: 220px;
+  height: 30px;
+  text-align: center;
+  color: #797878;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+}
+
+main {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.feeds {
+  width: 615px;
+}
+
+article {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articleHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.articleHeader .userInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.userInfo .userProfile {
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.textArea {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.articleImg {
+  width: 615px;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-right {
+}
+
+.userProfile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.articleImg {
+  width: 600px;
+  height: 600px;
+}
