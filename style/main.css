@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-size: 0.98em;
+  font-size: 14px;
 }
 .btn {
   height: 30px;
@@ -8,23 +8,41 @@
   height: 25px;
   margin: 15px 10px 15px 10px;
 }
-
-.smallHeart {
-  height: 12px;
-  width: 12px;
-}
-
 .userName,
 .userId,
 .bold {
-  font-weight: 900;
+  font-weight: 700;
 }
-
 .gray {
   color: #797878;
 }
+.darkgray {
+  color: #909090;
+}
 .lightgray {
   color: #bebebe;
+}
+.userInfo .userProfile {
+  border-radius: 50%;
+}
+.userInfo .textArea {
+  padding-left: 10px;
+}
+.big {
+  width: 56px;
+  height: 56px;
+}
+.middle {
+  width: 32px;
+  height: 32px;
+}
+.small {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.sfont {
+  font-size: 11px;
 }
 
 body {
@@ -34,7 +52,7 @@ body {
 
 nav {
   position: relative;
-  height: 50px;
+  height: 54px;
   border-bottom: 1px solid lightgray;
 }
 
@@ -44,29 +62,58 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* vertical-align: middle; */
-  /* align-content: center; */
   width: 940px;
-  height: 50px;
+  height: 54px;
+}
+.navRight img {
+  margin-right: 6px;
 }
 
 .textLogo {
   width: 103px;
   height: 29px;
   object-fit: cover;
-  /* margin-top: 15px; */
 }
 
 .search {
   width: 220px;
   height: 30px;
-  text-align: center;
-  color: #797878;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
 }
-
+.magnifier {
+  color: lightgray;
+  /* position: absolute; */
+  background-image: url('/img/magnifier.png');
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+  margin: auto 0;
+  margin-left: 10px;
+}
+.searchText {
+  display: none;
+}
+.searchInput {
+  text-align: center;
+  color: #797878;
+  border: none;
+  background-color: #fafafa;
+  /* margin-left: 20px; */
+}
+.xbtn {
+  /* position: absolute; */
+  background-image: url('/img/xbtn.png');
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+  margin: auto 0;
+  margin-right: 10px;
+}
 main {
   background-color: #fafafa;
   display: flex;
@@ -100,17 +147,22 @@ article {
   display: flex;
   flex-direction: row;
 }
+.articleHeader .userProfile {
+  padding: 10px;
+  margin-left: 5px;
+}
 .articleHeader img {
   width: 60px;
   height: 60px;
 }
-.userInfo .userProfile {
-  padding: 10px;
-  margin-left: 5px;
+
+.articleHeader .threeBtn {
+  width: 23px;
+  height: 23px;
+  margin: auto 10px;
 }
 
 .textArea {
-  margin-left: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,6 +205,10 @@ article {
 .likeStatus {
   margin-bottom: 8px;
 }
+.smallHeart {
+  height: 12px;
+  width: 12px;
+}
 .comment {
   display: flex;
   justify-content: space-between;
@@ -179,20 +235,16 @@ article {
 }
 
 .main-right {
-  font-size: 14px;
   width: 293px;
-  margin: 20px 0 0 30px;
+  margin: 50px 0 0 30px;
 }
-.userProfile {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
+
 .main-right .userInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
+  width: 293px;
+  height: 56px;
 }
 .main-right .userText {
   padding: 0 auto;
@@ -207,13 +259,7 @@ article {
   justify-content: space-between;
   height: 50px;
 }
-.recommended .userProfile {
-  width: 60px;
-  height: 60px;
-}
-.recommended .userText {
-  width: 170px;
-}
+
 .follow {
   border: none;
   background: none;
@@ -226,12 +272,21 @@ article {
   list-style: none;
   display: block;
   padding: 0;
-  font-size: 11px;
 }
 .menu li {
+  font-size: 11px;
   display: inline-block;
   line-height: 13px;
   vertical-align: baseline;
+  margin: 0;
+}
+.menu li::after {
+  content: '\00B7';
+  float: right;
+  margin: 0 0.25em 0 0.25em;
+}
+.menu li:last-child::after {
+  display: none;
 }
 .copyright {
   font-size: 11px;
