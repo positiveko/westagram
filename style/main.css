@@ -72,10 +72,11 @@ nav {
 .textLogo {
   width: 103px;
   height: 29px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .search {
+  position: relative;
   width: 220px;
   height: 30px;
   border: 1px solid #dbdbdb;
@@ -83,36 +84,61 @@ nav {
   background-color: #fafafa;
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row; */
+  cursor: text;
 }
+
 .magnifier {
-  color: lightgray;
-  /* position: absolute; */
   background-image: url('/img/magnifier.png');
   background-size: cover;
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
+  margin: auto 0;
+  margin-left: 95px;
+  transition: 0.5s;
+  z-index: 1000;
+}
+.magnifier.active {
+  background-image: url('/img/magnifier.png');
+  background-size: cover;
+  width: 10px;
+  height: 10px;
   margin: auto 0;
   margin-left: 10px;
 }
 .searchText {
-  display: none;
+  vertical-align: middle;
+  line-height: 30px;
+  height: 100%;
+  position: absolute;
+  margin: auto 0;
+  left: 50%;
+  opacity: 1;
+}
+.searchText.active {
+  opacity: 0;
 }
 .searchInput {
-  text-align: center;
+  opacity: 0;
+  z-index: 0;
+}
+.searchInput.active {
+  text-align: left;
   color: #797878;
   border: none;
   background-color: #fafafa;
-  /* margin-left: 20px; */
+  opacity: 1;
 }
 .xbtn {
-  /* position: absolute; */
+  opacity: 0;
+}
+.xbtn.active {
   background-image: url('/img/xbtn.png');
   background-size: cover;
   width: 13px;
   height: 13px;
   margin: auto 0;
   margin-right: 10px;
+  opacity: 1;
 }
 main {
   background-color: #fafafa;
@@ -253,24 +279,36 @@ article {
   display: flex;
   justify-content: space-between;
 }
-.recommended .userInfo {
+
+.recommendBox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 50px;
+  margin-bottom: 0;
+}
+.recommended .userInfo {
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+}
+.recommended .userText {
+  margin-left: 13px;
 }
 
 .follow {
+  width: 40px;
+  font-size: 12px;
   border: none;
   background: none;
   color: #469edb;
+  text-align: end;
 }
 .menu {
   margin-top: 25px;
   width: 100%;
   border-image-repeat: stretch;
   list-style: none;
-  display: block;
+  display: inline-block;
   padding: 0;
 }
 .menu li {
@@ -283,11 +321,12 @@ article {
 .menu li::after {
   content: '\00B7';
   float: right;
-  margin: 0 0.25em 0 0.25em;
+  margin-left: 0.25em;
 }
 .menu li:last-child::after {
   display: none;
 }
 .copyright {
   font-size: 11px;
+  margin-top: 5px;
 }
