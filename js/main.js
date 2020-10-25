@@ -53,7 +53,7 @@ function submitCmt(event) {
 }
 
 
-search.addEventListener('click', searchActive);
+searchInput.addEventListener('click', searchActive);
 searchInput.addEventListener('blur', searchInactive);
 xbtn.addEventListener('click', searchInactive);
 

@@ -91,6 +91,7 @@ nav {
 .magnifier.active {
   background-image: url('/img/magnifier.png');
   background-size: cover;
+  position: static;
   width: 10px;
   height: 10px;
   margin: auto 0;
@@ -102,6 +103,9 @@ nav {
   width: 10px;
   height: 10px;
   margin: auto 0;
+  position: absolute;
+  top: 10px;
+  left: 80px;
 }
 input:focus {
   outline: none;
@@ -113,15 +117,13 @@ input:focus {
   border: none;
   background-color: #fafafa;
 }
-/* .searchInput:focus {
-  outline: none;
-} */
 .searchInput {
   text-align: center;
   color: #797878;
   border: none;
   background-color: #fafafa;
-  width: 30px;
+  /* position: absolute; */
+  width: 100px;
   margin: 0 3px;
 }
 .xbtn {
