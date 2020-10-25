@@ -103,7 +103,6 @@ nav {
   width: 10px;
   height: 10px;
   margin: auto 0;
-  margin-left: 10px;
 }
 .searchText {
   vertical-align: middle;
@@ -159,6 +158,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .articleHeader {
@@ -253,13 +253,17 @@ article {
 }
 .commentInput {
   border: none;
+  width: 100%;
+  height: 100%;
 }
 .addBtn {
   border: none;
   background: none;
+  width: 40px;
   color: #bee1fd;
 }
 
+/* 우측 메인 */
 .main-right {
   width: 293px;
   margin: 50px 0 0 30px;
