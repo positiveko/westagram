@@ -52,12 +52,16 @@ body {
 }
 
 nav {
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
   height: 54px;
   border-bottom: 1px solid lightgray;
 }
 
 .navWrapper {
+  position: sticky;
+  top: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -262,8 +266,11 @@ article {
 
 /* 우측 메인 */
 .main-right {
+  position: sticky;
   width: 293px;
-  margin: 50px 0 0 30px;
+  height: 430px;
+  top: 100px;
+  margin-left: 30px;
 }
 
 .main-right .userInfo {
