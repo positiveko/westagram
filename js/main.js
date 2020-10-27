@@ -2,6 +2,7 @@
 // 2) 댓글 입력 시에 로컬 스토리지에 넣어서 새로고침 시에도 댓글이 남아 있도록 한 기능
 // 3) 빈 칸으로는 댓글 입력이 불가하도록 설정
 // 4) 인풋바 클릭 시에 스타일 효과
+// 5) X 버튼 클릭 시에 댓글 지우기 (로컬 스토리지에서도 삭제)
 
 
 // 인풋바
@@ -41,8 +42,17 @@ function searchInactive() {
 function saveCmt() {
     localStorage.setItem(CMTS_LS, JSON.stringify(cmts));
 }
-// 댓글 삭제 기능 추가 필요
 
+// 댓글 삭제
+function deleteCmt(event) {
+    const btn = event.target;
+    const cmt = btn.parentNode;
+    const comment = cmt.parentNode;
+    commentArea.removeChild(comment);
+    const cleanCMT = cmts.filter((cmtls) => {return cmtls.id !== parseInt(comment.id)});
+    cmts = cleanCMT;
+    saveCmt();
+}
 
 // 받은 comment 추가하기
 function makeCmt(cmt) {
@@ -53,12 +63,18 @@ function makeCmt(cmt) {
     let codeblock = `<div class="commentSet">
     <span class="userId">edie_ko</span>
     <span class="userComment">${cmt}</span>
+    <button class="deleteBtn">X</button>
     </div>
     <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" alt="smallHeart" class="smallHeart">`
     let cmtSet = document.createElement('div');
     cmtSet.className = 'comment';
     cmtSet.innerHTML = codeblock;
     commentArea.appendChild(cmtSet);
+    // deleteBtn에 삭제 기능 추가
+    let deleteBtn = document.querySelectorAll('.deleteBtn');
+    for (let i = 0; i < deleteBtn.length; i++) {
+        deleteBtn[i].addEventListener('click', deleteCmt);
+        }
     // local storage에 저장할 객체 생성
     const newId = cmts.length + 1;
     cmtSet.id = newId;

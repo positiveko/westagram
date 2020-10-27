@@ -262,6 +262,18 @@ article {
   background: none;
   width: 40px;
   color: #bee1fd;
+  cursor: pointer;
+}
+.deleteBtn {
+  border: none;
+  background: none;
+  width: 40px;
+  color: #469edb;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 /* 우측 메인 */
