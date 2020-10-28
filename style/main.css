@@ -1,5 +1,4 @@
 * {
-  box-sizing: border-box;
   font-size: 14px;
 }
 .btn {
@@ -53,22 +52,22 @@ body {
 
 nav {
   position: sticky;
+  height: 54px;
   top: 0;
   background-color: #fff;
-  height: 54px;
   border-bottom: 1px solid lightgray;
 }
 
 .navWrapper {
   position: sticky;
-  top: 0;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 940px;
   height: 54px;
+  top: 0;
+  margin: 0 auto;
 }
 .navRight img {
   margin-right: 6px;
@@ -81,71 +80,70 @@ nav {
 }
 
 .search {
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 220px;
   height: 30px;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   background-color: #fafafa;
-  display: flex;
-  justify-content: center;
   cursor: text;
 }
 
 .magnifier.active {
-  background-image: url('/img/magnifier.png');
-  background-size: cover;
   position: static;
   width: 10px;
   height: 10px;
   margin: auto 0;
   margin-left: 10px;
-}
-.magnifier {
   background-image: url('/img/magnifier.png');
   background-size: cover;
+}
+.magnifier {
+  position: absolute;
   width: 10px;
   height: 10px;
-  margin: auto 0;
-  position: absolute;
   top: 10px;
   left: 80px;
+  margin: auto 0;
+  background-image: url('/img/magnifier.png');
+  background-size: cover;
 }
 input:focus {
   outline: none;
 }
 .searchInput.active {
   width: 155px;
-  text-align: left;
   color: #797878;
   border: none;
   background-color: #fafafa;
+  text-align: left;
 }
 .searchInput {
-  text-align: center;
+  width: 100px;
+  margin: 0 3px;
   color: #797878;
   border: none;
   background-color: #fafafa;
-  /* position: absolute; */
-  width: 100px;
-  margin: 0 3px;
+  text-align: center;
 }
 .xbtn {
-  background-image: url('/img/xbtn.png');
-  background-size: cover;
+  display: none;
   width: 13px;
   height: 13px;
   margin: auto 0;
   margin-right: 10px;
-  display: none;
+  background-image: url('/img/xbtn.png');
+  background-size: cover;
 }
+
 main {
-  background-color: #fafafa;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #fafafa;
 }
-
 .feeds {
   width: 615px;
 }
@@ -253,22 +251,22 @@ article {
   justify-content: space-between;
 }
 .commentInput {
-  border: none;
   width: 100%;
   height: 100%;
+  border: none;
 }
 .addBtn {
-  border: none;
-  background: none;
   width: 40px;
   color: #bee1fd;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 .deleteBtn {
-  border: none;
-  background: none;
   width: 40px;
   color: #469edb;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 

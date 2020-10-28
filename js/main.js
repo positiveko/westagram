@@ -21,8 +21,6 @@ const commentForm = document.querySelector('.commentForm'),
 const CMTS_LS = 'cmts';
 let cmts = [];
 
-
-
 //인풋바 활성화
 function searchActive() {
     xbtn.style.display = 'block';
@@ -30,6 +28,7 @@ function searchActive() {
     magnifier.classList.toggle('active');
     search.style.justifyContent = 'space-between';
 }
+
 // 인풋바 비활성화 (x버튼 혹은 인풋 이외 클릭 시)
 function searchInactive() {
     xbtn.style.display = 'none';
@@ -59,6 +58,8 @@ function makeCmt(cmt) {
     // 빈 내용 댓글 추가 불가
     if (cmt.trim() === '') {
         return;
+    // } else if ( cmt.keycode === '16' + ) {
+    //    cmt + \n
     }
     let codeblock = `<div class="commentSet">
     <span class="userId">edie_ko</span>
@@ -105,11 +106,9 @@ function loadCmts() {
     }
 }
 
-
 searchInput.addEventListener('click', searchActive);
 searchInput.addEventListener('blur', searchInactive);
 xbtn.addEventListener('click', searchInactive);
-
 
 commentForm.addEventListener('submit', submitCmt);
 addBtn.addEventListener('click', submitCmt);
