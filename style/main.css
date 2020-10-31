@@ -1,4 +1,7 @@
-* {
+searchResultList.innerHTML += `<div class="searchResultSet">
+          <img src="${e.imgUrl}"
+          alt="userProfile" class="searchResultImg middle">
+          <span class="userId">${e.userId}</span></div>`;* {
   font-size: 14px;
 }
 /* 전체 도큐먼트에 중복 할당되는 클래스 */
@@ -75,7 +78,6 @@ nav {
 }
 
 .navWrapper {
-  position: sticky;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -108,24 +110,37 @@ nav {
   cursor: text;
 }
 
+.search.active {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  width: 220px;
+  height: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  cursor: text;
+}
+
 .magnifier.active {
   position: static;
   width: 10px;
   height: 10px;
   margin: auto 0;
   margin-left: 10px;
-  background-image: url('/img/magnifier.png');
+  background-image: url('../img/magnifier.png');
   background-size: cover;
 }
 
 .magnifier {
+  justify-content: center;
   position: absolute;
   width: 10px;
   height: 10px;
   top: 10px;
   left: 80px;
   margin: auto 0;
-  background-image: url('/img/magnifier.png');
+  background-image: url('../img/magnifier.png');
   background-size: cover;
 }
 
@@ -146,14 +161,59 @@ nav {
   text-align: center;
 }
 
-.xbtn {
-  display: none;
+.xbtn.active {
+  display: block;
   width: 13px;
   height: 13px;
   margin: auto 0;
   margin-right: 10px;
-  background-image: url('/img/xbtn.png');
+  background-image: url('../img/xbtn.png');
   background-size: cover;
+}
+
+.xbtn {
+  display: none;
+}
+
+/* 검색 결과창*/
+.searchResultList {
+  position: sticky;
+  margin: 6px;
+  width: 242px;
+  max-height: 360px;
+  overflow: hidden; 
+  overflow-y: auto;
+  left: 41%;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background-color:white;
+}
+
+.searchResultList::before {
+  content: '  ';
+  position: absolute;
+  top: 10px;;
+  left: 90px;
+  width: 1000px;
+  height: 50px;
+  border: 1px solid #dbdbdb;
+  transform: rotate(45deg);
+  background-color: red;
+  z-index: 1000;
+}
+
+.searchResultSet {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+  width: 240px;
+  height: 67px;
+}
+
+.searchResultImg {
+  border-radius: 50%;
+  margin: 0 10px 0 10px;
 }
 
 /* 메인 시작 */
@@ -170,22 +230,22 @@ main {
 
 /* 아티클 */
 article {
-  margin-top: 20px;
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
   margin-bottom: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
 }
 
 .articleHeader {
-  height: 60px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 60px;
+  width: 100%;
 }
 
 .articleHeader .userInfo {
@@ -228,15 +288,14 @@ article {
 .articleFooter {
   width: 100%;
   padding: 4px 8px 0px 8px;
-  /* padding: 10px, 30px; */
 }
 
 .iconbar {
-  height: 40px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 40px;
+  width: 100%;
 }
 
 .iconbar .btn {
@@ -250,9 +309,9 @@ article {
 
 /* 댓글 */
 .commentArea {
-  padding: 0 10px 0px 10px;
   display: flex;
   flex-direction: column;
+  padding: 0 10px 0px 10px;
 }
 
 .likeStatus {
@@ -271,17 +330,17 @@ article {
 }
 
 .time {
-  font-size: 0.75em;
   margin: 0 0 10px 10px;
+  font-size: 0.75em;
 }
 
 .commentForm {
-  width: 100%;
-  border-top: 1px solid lightgray;
-  height: 50px;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-top: 1px solid lightgray;
 }
 
 .commentInput {
@@ -292,17 +351,17 @@ article {
 
 .addBtn {
   width: 40px;
+  border: none;
   color: #bee1fd;
   background: none;
-  border: none;
   cursor: pointer;
 }
 
 .deleteBtn {
   width: 40px;
+  border: none;
   color: #469edb;
   background: none;
-  border: none;
   cursor: pointer;
 }
 
@@ -357,26 +416,26 @@ button:focus {
   width: 40px;
   font-size: 12px;
   border: none;
-  background: none;
   color: #469edb;
+  background: none;
   text-align: end;
 }
 
 .menu {
+  display: inline-block;
   margin-top: 25px;
   width: 100%;
+  padding: 0;
   border-image-repeat: stretch;
   list-style: none;
-  display: inline-block;
-  padding: 0;
 }
 
 .menu li {
-  font-size: 11px;
   display: inline-block;
-  line-height: 13px;
   vertical-align: baseline;
   margin: 0;
+  line-height: 13px;
+  font-size: 11px;
 }
 
 .menu li::after {
@@ -395,7 +454,6 @@ button:focus {
 }
 
 /* responsive browser media query settings */
-
 @media screen and (max-width: 960px) {
   body {
     width: 100%;
@@ -420,7 +478,6 @@ button:focus {
     min-width: 500px;
   }
   .articleImg {
-    /* width: 600px; */
     width: 100%;
   }
   .search {

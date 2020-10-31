@@ -10,17 +10,15 @@
 </head>
 
 <body>
-
   <!-- 네비바 시작 -->
   <nav>
     <div class="navWrapper">
       <img src="img/logo_text.png" alt="Instagram" class="textLogo">
-      <div class="search">
+      <form class="search">
         <div class="magnifier"></div>
-        <!-- <div class="searchText gray">검색</div> -->
         <input type="text" autocapitalize="none" placeholder="검색" class="searchInput">
         <span class="xbtn"></span>
-      </div>
+      </form>
 
       <div class="navRight">
         <img src="img/home.png" alt="home" class="btn home">
@@ -32,10 +30,12 @@
         <img src="img/userProfile.jpg" alt="userProfile" class="btn small">
       </div>
     </div>
+    <div class="searchResultList">
+    </div>
   </nav>
+  <!-- 네비바 끝 -->
+  <!-- 아티클 시작 -->
   <main>
-    <!-- 네비바 끝 -->
-    <!-- 아티클 시작 -->
     <div class="feeds">
       <article>
         <div class="articleHeader">
@@ -84,7 +84,6 @@
         </form>
       </article>
     </div>
-
     <!-- 아티클 끝 -->
     <!-- 우측 메뉴 시작 -->
     <div class="main-right">
@@ -181,6 +180,8 @@
     </div>
   </main>
   <script src="js/main.js"></script>
+  <script src="js/searchdata.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 </html>
