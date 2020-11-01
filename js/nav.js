@@ -1,6 +1,3 @@
-// 아이디 검색 기능 구현
-// 먼저 아이디의 배열을 만든다
-// 인풋바에 글자를 치면 (key up)하면 result 배열에 조건에 충족하는 객체들을 push함
 // 인풋바
 const search = document.querySelector('.search'),
   searchInput = document.querySelector('.searchInput'),
@@ -8,8 +5,12 @@ const search = document.querySelector('.search'),
   magnifier = document.querySelector('.magnifier'),
   searchText = document.querySelector('.searchText');
 
+const searchResultList = document.querySelector('.searchResultList'),
+  searchResultSet = document.querySelector('.searchREsultSet');
+
 // 인풋바 활성화
 function searchActive() {
+  searchInput.value = '';
   const isActive = searchInput.classList.contains('active');
   magnifier.classList = isActive ? 'magnifier' : 'magnifier active';
   xbtn.classList = isActive ? 'xbtn' : 'xbtn active';
@@ -17,20 +18,19 @@ function searchActive() {
   searchInput.classList = isActive ? 'searchInput' : 'searchInput active';
 }
 
-// 조건은 한 글자라도 들어가 있으면 포함시키는 것
-const searchResultList = document.querySelector('.searchResultList'),
-  searchResultSet = document.querySelector('.searchREsultSet');
-
+// userId 검색 (and 조건) 공백을 기준으로 검색어 필터
 function searchId() {
   const searchKeyword = searchInput.value;
   const searchKeywordArray = searchKeyword.split(' ');
   searchResultList.innerHTML = '';
+  searchResultList.classList.remove('displayNone');
   let searchData = data.slice();
+  if (searchKeyword.trim() == '') {
+    searchResultList.classList.add('displayNone');
+    return;
+  }
   searchKeywordArray.forEach((key) => {
     let tempData = [];
-    if (searchKeyword == '') {
-      return;
-    }
     searchData.forEach((e) => {
       if (e.userId.includes(key)) {
         tempData.push(e);
@@ -46,18 +46,17 @@ function searchId() {
   });
 }
 
-function cleanData() {
-  searchResultList.innerHTML = '';
-  searchInput.value = '';
-}
+const cleanData = () => {
+  searchResultList.classList.add('displayNone');
+};
 
 function init() {
   searchInput.addEventListener('focus', searchActive);
   searchInput.addEventListener('blur', searchActive);
-  xbtn.addEventListener('click', searchActive);
+  searchInput.addEventListener('blur', cleanData);
   searchInput.addEventListener('keyup', searchId);
+  xbtn.addEventListener('click', searchActive);
   xbtn.addEventListener('click', cleanData);
-  console.log(xbtn);
 }
 
 init();
